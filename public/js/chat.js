@@ -15,7 +15,11 @@ $('form').submit(function(){
 
 socket.on('chat message', function(msg){
   //($('<span>').text(msg)).appendTo('.feed').addClass('animate').delay(20000).fadeOut(1500);
-  ($('<span>').text(msg)).appendTo('.feed').addClass('animate');
+  ($('<span>').text(msg)).appendTo('.feed').delay(20000).queue(function(){
+    $(this).addClass('animate').dequeue().delay(800).queue(function(){
+      $(this).addClass('gone').dequeue();
+    });
+  });
   to_bottom();
 });
 
