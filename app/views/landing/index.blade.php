@@ -8,14 +8,21 @@
   <div class="feed">
   </div>
 
-  <form action="">
-    <input id="m" autocomplete="off" /><button>Send</button>
-  </form>
+  <div class="input_bar">
+    <form id="chat" action="">
+      <input id="m" placeholder="say something bruh" autocomplete="off" /><!--<button>Send</button>-->
+    </form>
+  </div>
 
   {{ HTML::script('js/countdown.js') }}
   {{ HTML::script('https://cdn.socket.io/socket.io-1.2.0.js') }}
   <script>
-  var socket = io('http://localhost:3000');
+  function to_bottom() {
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    return false;
+  }
+
+  var socket = io('http://localhost:8080');
 
   $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
@@ -24,7 +31,8 @@
   });
   socket.on('chat message', function(msg){
     console.log(msg);
-    $('.feed').append($('<li>').text(msg));
+    ($('<span>').text(msg)).appendTo('.feed').addClass('animate');
+    to_bottom();
   });
   </script>
 @stop
