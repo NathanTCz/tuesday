@@ -12,8 +12,23 @@ $('form').submit(function(){
   $('#m').val('');
   return false;
 });
+
 socket.on('chat message', function(msg){
-  ($('<span>').text(msg)).appendTo('.feed').addClass('animate').delay(20000).fadeOut(1500);
-  //($('<span>').text(msg)).appendTo('.feed').addClass('animate');
+  //($('<span>').text(msg)).appendTo('.feed').addClass('animate').delay(20000).fadeOut(1500);
+  ($('<span>').text(msg)).appendTo('.feed').delay(20000).queue(function(){
+    $(this).addClass('animate').dequeue().delay(800).queue(function(){
+      $(this).addClass('gone').dequeue();
+    });
+  });
   to_bottom();
+});
+
+socket.on('user conn', function(count){
+  var tail = (count > 1) ? ' people here right now' : ' person here right now';
+  $('#user_count').html(count + tail);
+});
+
+socket.on('user disconn', function(count){
+  var tail = (count > 1) ? ' people here right now' : ' person here right now';
+  $('#user_count').html(count + tail);
 });

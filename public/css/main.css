@@ -30,6 +30,15 @@ span#title {
   font-size: 2em;
 }
 
+span#user_count {
+  position: fixed;
+  bottom: 2px;
+  left: 2px;
+
+  font-size: 2vmin;
+  color: grey;
+}
+
 div.clock {
   border: 1px dashed #EEE;
   border-radius: 5px;
@@ -67,7 +76,7 @@ form#chat input {
   width: 100%;
   padding-left: 1vw;
 
-  background: transparent;
+  background: #2C3E50;
   border: 1px solid #EEE;
   border-radius: 5px;
   color: #E4F1FE;
@@ -89,12 +98,21 @@ div.feed span {
 
   margin: 1em;
   padding: 2vw;
+  opacity: 1;
 
   border: 1px dashed #EEE;
   border-radius: 5px;
   font-size: 3.5vmin;
+
+  transition: all 1s;
 }
 
 div.feed span.animate {
+  opacity: 0;
+}
 
+div.feed span.gone {
+  height: 0;
+  padding: 0;
+  font-size: 0;
 }

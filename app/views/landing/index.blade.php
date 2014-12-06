@@ -14,6 +14,8 @@
     </form>
   </div>
 
+  <span id="user_count"></span>
+
   {{ HTML::script('js/countdown.js') }}
   {{ HTML::script('https://cdn.socket.io/socket.io-1.2.0.js') }}
   {{ HTML::script('js/chat.js') }}
