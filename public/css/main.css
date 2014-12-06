@@ -31,10 +31,10 @@ span#title {
 }
 
 div.clock {
-  margin: 5em auto;
-
   border: 1px dashed #EEE;
   border-radius: 5px;
+  font-size: 12vw;
+  background: #2C3E50;
 }
 
 div.clock span#time {
@@ -43,7 +43,6 @@ div.clock span#time {
 
   text-align: center;
   color: #E4F1FE;
-  font-size: 12vw;
 }
 
 div.input_bar {
@@ -82,7 +81,7 @@ form#chat input:focus {
 
 div.feed {
   width: 80%;
-  margin: 5em auto;
+  margin: 45vh auto 15vh auto;
 }
 
 div.feed span {

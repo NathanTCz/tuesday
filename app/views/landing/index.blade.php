@@ -2,7 +2,7 @@
 
 @section('content')
   <span id="title">The club is going up in approximately:</span>
-  <div class="clock">
+  <div class="clock" data-0="position:fixed;top:15vh;left:10%;width:80%;font-size:12vw;" data-150="position:fixed;top:0;left:0;margin:0;width:100%;font-size:3vw;">
     <span id="time"></span>
   </div>
   <div class="feed">
@@ -16,24 +16,5 @@
 
   {{ HTML::script('js/countdown.js') }}
   {{ HTML::script('https://cdn.socket.io/socket.io-1.2.0.js') }}
-  <script>
-  function to_bottom() {
-    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-    return false;
-  }
-
-  var host = window.location.protocol + '//' + window.location.host + ':' + '8080';
-
-  var socket = io(host);
-
-  $('form').submit(function(){
-    socket.emit('chat message', $('#m').val());
-    $('#m').val('');
-    return false;
-  });
-  socket.on('chat message', function(msg){
-    ($('<span>').text(msg)).appendTo('.feed').addClass('animate');
-    to_bottom();
-  });
-  </script>
+  {{ HTML::script('js/chat.js') }}
 @stop

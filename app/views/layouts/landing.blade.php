@@ -10,5 +10,9 @@
   <div class="wrapper">
     @yield('content')
   </div>
+  {{ HTML::script('js/skrollr.min.js') }}
+  <script>
+    var s = skrollr.init({forceHeight:false});
+  </script>
 </body>
 </html>
