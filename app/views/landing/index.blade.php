@@ -22,7 +22,9 @@
     return false;
   }
 
-  var socket = io('http://localhost:8080');
+  var host = window.location.protocol + '//' + window.location.host + ':' + '8080';
+
+  var socket = io(host);
 
   $('form').submit(function(){
     socket.emit('chat message', $('#m').val());
@@ -30,7 +32,6 @@
     return false;
   });
   socket.on('chat message', function(msg){
-    console.log(msg);
     ($('<span>').text(msg)).appendTo('.feed').addClass('animate');
     to_bottom();
   });
