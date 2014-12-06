@@ -30,6 +30,15 @@ span#title {
   font-size: 2em;
 }
 
+span#user_count {
+  position: fixed;
+  bottom: 2px;
+  left: 2px;
+
+  font-size: 2vmin;
+  color: grey;
+}
+
 div.clock {
   border: 1px dashed #EEE;
   border-radius: 5px;
@@ -89,12 +98,16 @@ div.feed span {
 
   margin: 1em;
   padding: 2vw;
+  height: 1em;
 
   border: 1px dashed #EEE;
   border-radius: 5px;
   font-size: 3.5vmin;
+
+  transition: all 1.5s;
+  transistion-delay: 2s;
 }
 
 div.feed span.animate {
-
+  height: 0;
 }
