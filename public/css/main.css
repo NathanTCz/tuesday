@@ -104,7 +104,7 @@ div.feed span {
   border-radius: 5px;
   font-size: 3.5vmin;
 
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 div.feed span.animate {
