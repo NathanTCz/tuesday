@@ -1,6 +1,6 @@
 function recalc() {
   var Now = moment();
-  var next_tue = moment().day(2).startOf('day').add(7, 'days');
+  var next_tue = moment().isoWeekday(2).day(2).startOf('day').add(7, 'days');
 
   diff = Now.diff(next_tue, 'seconds');
   diff = Math.abs(diff);

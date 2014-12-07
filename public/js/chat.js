@@ -45,8 +45,8 @@ socket.on('user disconn', function(count){
   }
   if (count == 1)
     tail = ' other person here right now';
-    if (count > 1)
-      tail = ' other people here right now';
+  if (count > 1)
+    tail = ' other people here right now';
 
       $('#user_count').html(count + tail);
 });
