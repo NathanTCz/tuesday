@@ -38,6 +38,15 @@ socket.on('user conn', function(count){
 });
 
 socket.on('user disconn', function(count){
-  var tail = (count > 0) ? ' other people here right now' : ' other person here right now';
-  $('#user_count').html(count + tail);
+  var tail;
+  if (count == 0) {
+    count = '';
+    tail = 'noboby else here right now';
+  }
+  if (count == 1)
+    tail = ' other person here right now';
+    if (count > 1)
+      tail = ' other people here right now';
+
+      $('#user_count').html(count + tail);
 });
