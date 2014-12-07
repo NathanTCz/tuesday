@@ -15,8 +15,8 @@ $('form').submit(function(){
 
 socket.on('chat message', function(msg){
   //($('<span>').text(msg)).appendTo('.feed').addClass('animate').delay(20000).fadeOut(1500);
-  ($('<span>').text(msg)).appendTo('.feed').delay(20000).queue(function(){
-    $(this).addClass('animate').dequeue().delay(800).queue(function(){
+  ($('<span>').text(msg)).appendTo('.feed').delay(120000).queue(function(){
+    $(this).addClass('animate').dequeue().delay(300).queue(function(){
       $(this).addClass('gone').dequeue();
     });
   });
@@ -24,11 +24,20 @@ socket.on('chat message', function(msg){
 });
 
 socket.on('user conn', function(count){
-  var tail = (count > 1) ? ' people here right now' : ' person here right now';
+  var tail;
+  if (count == 0) {
+    count = '';
+    tail = 'noboby else here right now';
+  }
+  if (count == 1)
+    tail = ' other person here right now';
+  if (count > 1)
+    tail = ' other people here right now';
+
   $('#user_count').html(count + tail);
 });
 
 socket.on('user disconn', function(count){
-  var tail = (count > 1) ? ' people here right now' : ' person here right now';
+  var tail = (count > 0) ? ' other people here right now' : ' other person here right now';
   $('#user_count').html(count + tail);
 });

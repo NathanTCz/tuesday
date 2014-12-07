@@ -5,7 +5,7 @@ var http = require('http');
 var app = express();
 var server = http.createServer(app);
 
-var count = 0;
+var count = -1;
 
 var io = socket.listen(server);
 
