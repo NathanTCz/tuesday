@@ -39,6 +39,27 @@ span#user_count {
   color: grey;
 }
 
+button#play_pause {
+  display: none;;
+  position: relative;
+  top: 2px;
+  left: 2px;
+
+  background: none;
+  color: inherit;
+  font-size: 0.15em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button#play_pause.play:after {
+  content: 'Play';
+}
+button#play_pause.pause:after {
+  content: 'Pause';
+}
+
 div.clock {
   border: 1px dashed #EEE;
   border-radius: 5px;
@@ -90,7 +111,7 @@ form#chat input:focus {
 
 div.feed {
   width: 80%;
-  margin: 45vh auto 15vh auto;
+  margin: 20% auto 10% auto;
 }
 
 div.feed span {
