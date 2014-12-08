@@ -1,6 +1,10 @@
-function recalc() {
+function recalc(s) {
   var Now = moment();
-  var next_tue = moment().isoWeekday(2).day(-5).startOf('day').add(7, 'days');
+
+  if ( Now.day == 0 || Now.day == 1 )
+    var next_tue = moment().isoWeekday(2).day(2).startOf('day').add(7, 'days');
+  else
+    var next_tue = moment().isoWeekday(2).day(2).startOf('day');
 
   diff = Now.diff(next_tue, 'seconds');
   diff = Math.abs(diff);
@@ -15,8 +19,41 @@ function recalc() {
 
   countdown = hours + ':' + minutes + ':' + seconds;
 
-  $('#time').html(countdown);
-  setTimeout(function(){recalc();}, 1000);
+
+  if( Now.day() != 2 ) {
+    $('#title').html('The club is going up in approximately:');
+    $('#time').html(countdown);
+    setTimeout(function(){recalc();}, 1000);
+  }
+  else {
+    $('#play_pause').attr('style', 'display:block');
+
+    SC.initialize({
+      client_id: 'ab4ba14254ae14869f7c52233f290082'
+    });
+
+    // stream track id 162779883
+    SC.stream("/tracks/162779883", function(sound){
+      var song = sound;
+      song.play();
+
+      $('#play_pause').click(function(){
+        if ( $(this).data('now') == 'paused') {
+          song.play();
+          $(this).data('now', 'playing');
+          $(this).attr('class', 'pause');
+        }
+        else if ( $(this).data('now') == 'playing') {
+          song.pause();
+          $(this).data('now', 'paused');
+          $(this).attr('class', 'play');
+        }
+      });
+    });
+
+    $('#title').html('Got the club goin up...');
+    $('#time').html("On a fucking Tuesday");
+  }
 }
 
 recalc();

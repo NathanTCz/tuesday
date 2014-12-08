@@ -16,7 +16,7 @@ $('form').submit(function(){
 socket.on('chat message', function(msg){
   //($('<span>').text(msg)).appendTo('.feed').addClass('animate').delay(20000).fadeOut(1500);
   ($('<span>').text(msg)).appendTo('.feed').delay(120000).queue(function(){
-    $(this).addClass('animate').dequeue().delay(300).queue(function(){
+    $(this).addClass('animate').dequeue().delay(500).queue(function(){
       $(this).addClass('gone').dequeue();
     });
   });
