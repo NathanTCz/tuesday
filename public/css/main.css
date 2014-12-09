@@ -40,7 +40,7 @@ span#user_count {
 }
 
 button#play_pause {
-  display: none;;
+  display: none;
   position: relative;
   top: 2px;
   left: 2px;
