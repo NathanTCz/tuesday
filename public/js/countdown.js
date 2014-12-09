@@ -1,4 +1,4 @@
-function recalc(s) {
+function recalc() {
   var Now = moment();
 
   if ( Now.day == 0 || Now.day == 1 )
