@@ -28,7 +28,6 @@ div.wrapper {
 
 span#title {
   display: block;
-  padding: 10px;
 
   text-align: center;
   color: #E4F1FE;
@@ -99,13 +98,15 @@ div.input_bar {
 
 form#chat {
   display: block;
-  width: 95%;
+  width: 98%;
   height: 100%;
 
   margin: 1em auto;
 }
 form#chat input {
-  width: 100%;
+  display: block;
+  width: 95%;
+  margin: 0 auto;
 
   background: #EEE;
   border: 1px solid #EEE;

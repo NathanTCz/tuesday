@@ -9,7 +9,7 @@
     <button id="play_pause" class="pause" data-now="playing"></button>
     <span id="time"></span>
   </div>
-  <div id="skrollr-body" class="feed">
+  <div class="feed">
   </div>
 
   <div class="input_bar">
