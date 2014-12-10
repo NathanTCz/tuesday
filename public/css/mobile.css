@@ -9,34 +9,41 @@ html {
 
   background: #2C3E50;
   font-family: 'HelveticaNeue-UltraLight',
-               'Helvetica Neue UltraLight',
-               'Helvetica Neue',
-               'Open-Light'
-               ,sans-serif;
+  'Helvetica Neue UltraLight',
+  'Helvetica Neue',
+  'Open-Light'
+  ,sans-serif;
   color: #E4F1FE;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 div.wrapper {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
 span#title {
   display: block;
-  padding: 10px;
 
   text-align: center;
   color: #E4F1FE;
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 span#user_count {
-  position: fixed;
+  display: block;
+  position: relative;
   bottom: 2px;
-  left: 2px;
 
-  font-size: 2vmin;
-  color: grey;
+  width: 100%;
+
+  text-align: center;
+  font-size: 3vmin;
+  color: #333;
 }
 
 button#play_pause {
@@ -61,10 +68,14 @@ button#play_pause.pause:after {
 }
 
 div.clock {
-  border: 1px dashed #EEE;
-  border-radius: 5px;
-  font-size: 12vw;
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+
+  border-bottom: 4px solid #EEE;
   background: #2C3E50;
+  font-size: 18vmin;
 }
 
 div.clock span#time {
@@ -79,30 +90,31 @@ div.input_bar {
   position: fixed;
   bottom: 0;
 
-  width: 60%;
-  height: 3em;
+  width: 100%;
+  height: auto;
 
+  background: gray;
 }
 
 form#chat {
-  position: fixed;
-  bottom: 5vh;
-  left: 50%;
+  display: block;
+  width: 98%;
+  height: 100%;
 
-  width: 75vw;
-  height: 2em;
-  margin-left: -37.5vw;
+  margin: 1em auto;
 }
 form#chat input {
-  width: 100%;
-  padding-left: 1vw;
+  display: block;
+  width: 95%;
+  margin: 0 auto;
 
-  background: #2C3E50;
+  background: #EEE;
   border: 1px solid #EEE;
   border-radius: 5px;
-  color: #E4F1FE;
+
+  color: black;
   font-family: inherit;
-  font-size: 3vh;
+  font-size: 8vmin;
 }
 
 form#chat input:focus {
@@ -110,20 +122,18 @@ form#chat input:focus {
 }
 
 div.feed {
-  width: 80%;
-  margin: 20% auto 10% auto;
+  width: 100%;
 }
 
 div.feed span {
   display: block;
 
-  margin: 1em;
+  margin: 0;
   padding: 2vw;
   opacity: 1;
 
-  border: 1px dashed #EEE;
-  border-radius: 5px;
-  font-size: 3.5vmin;
+  border-bottom: 2px solid #EEE;
+  font-size: 5vw;
 
   transition: all 0.5s;
 }

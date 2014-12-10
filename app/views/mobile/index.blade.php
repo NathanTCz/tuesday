@@ -1,8 +1,11 @@
-@extends('layouts.landing')
+@extends('layouts.mobile')
 
 @section('content')
   <span id="title"></span>
-  <div class="clock" data-0="position:fixed;top:10%;left:10%;width:80%;font-size:12vmin;" data-150="position:fixed;top:0;left:0;margin:0;width:100%;font-size:3vw;">
+  <div class="clock"
+    data-0="margin-top:0;font-size:16vmin;"
+    data-150="margin-top:-50px;font-size:3vmin;"
+  >
     <button id="play_pause" class="pause" data-now="playing"></button>
     <span id="time"></span>
   </div>
@@ -10,12 +13,11 @@
   </div>
 
   <div class="input_bar">
+    <span id="user_count"></span>
     <form id="chat" action="">
       <input id="m" placeholder="say something bruh" autocomplete="off" /><!--<button>Send</button>-->
     </form>
   </div>
-
-  <span id="user_count"></span>
 
   {{ HTML::script('http://connect.soundcloud.com/sdk.js') }}
   {{ HTML::script('js/countdown.js') }}
