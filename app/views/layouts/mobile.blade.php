@@ -12,7 +12,10 @@
   </div>
   {{ HTML::script('js/skrollr.min.js') }}
   <script>
-    var s = skrollr.init({forceHeight:false});
+    // var s = skrollr.init({
+    //   smoothScrolling: false,
+    //   mobileDeceleration: 0.004
+    // });
   </script>
 </body>
 </html>
