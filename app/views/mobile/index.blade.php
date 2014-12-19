@@ -2,11 +2,11 @@
 
 @section('content')
   <span id="title"></span>
+  <button id="play_pause" class="pause" data-now="playing"></button>
   <div class="clock"
     data-0="margin-top:0;font-size:16vmin;"
     data-150="margin-top:-50px;font-size:3vmin;"
   >
-    <button id="play_pause" class="pause" data-now="playing"></button>
     <span id="time"></span>
   </div>
   <div class="feed">
