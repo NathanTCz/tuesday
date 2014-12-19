@@ -31,7 +31,7 @@ span#title {
 
   text-align: center;
   color: #E4F1FE;
-  font-size: 1.5em;
+  font-size: 8vmin;
 }
 
 span#user_count {
@@ -48,23 +48,29 @@ span#user_count {
 
 button#play_pause {
   display: none;
-  position: relative;
-  top: 2px;
-  left: 2px;
+  position: absolute;
+  top: 4px;
+  left: 8px;
 
   background: none;
   color: inherit;
   font-size: 0.15em;
+  padding: 0;
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-button#play_pause.play:after {
-  content: 'Play';
+button#play_pause.play {
+  border-top: 3vmin solid transparent;
+  border-bottom: 3vmin solid transparent;
+  border-left: 6vmin solid #FFF;
 }
-button#play_pause.pause:after {
-  content: 'Pause';
+button#play_pause.pause {
+  border-right: 2.3vmin solid #FFF;
+  border-left: 2.3vmin solid #FFF;
+  width: 6vmin;
+  height: 6vmin;
 }
 
 div.clock {
@@ -75,7 +81,7 @@ div.clock {
 
   border-bottom: 4px solid #EEE;
   background: #2C3E50;
-  font-size: 20vmin;
+  font-size: 18vmin;
 }
 
 div.clock span#time {
@@ -133,7 +139,7 @@ div.feed span {
   opacity: 1;
 
   border-bottom: 2px solid #EEE;
-  font-size: 5vw;
+  font-size: 5.5vw;
 
   transition: all 0.5s;
 }

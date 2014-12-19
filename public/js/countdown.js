@@ -1,5 +1,5 @@
 function recalc() {
-  var Now = moment().day(2);
+  var Now = moment();
 
   if ( Now.day() < 2 )
     var next_tue = moment().day(2).startOf('day');
