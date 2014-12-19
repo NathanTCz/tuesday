@@ -31,7 +31,7 @@ span#title {
 
   text-align: center;
   color: #E4F1FE;
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 span#user_count {
@@ -42,8 +42,8 @@ span#user_count {
   width: 100%;
 
   text-align: center;
-  font-size: 3vmin;
-  color: #333;
+  font-size: 6vmin;
+  color: #000;
 }
 
 button#play_pause {
@@ -75,7 +75,7 @@ div.clock {
 
   border-bottom: 4px solid #EEE;
   background: #2C3E50;
-  font-size: 18vmin;
+  font-size: 20vmin;
 }
 
 div.clock span#time {
